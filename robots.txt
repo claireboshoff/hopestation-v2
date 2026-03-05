@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://claireboshoff.github.io/hopestation-v2/sitemap.xml
