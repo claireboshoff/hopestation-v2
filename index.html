@@ -2,28 +2,169 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hope Station | Garden Venue in George, Western Cape</title>
-  <meta name="description" content="Hope Station is a tranquil garden venue nestled in the Outeniqua mountains of George, Western Cape. Host corporate retreats, wellness events, workshops, and private gatherings in nature.">
-  <meta name="keywords" content="garden venue George, event venue Western Cape, corporate retreat Garden Route, wellness venue South Africa, workshop space George">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO -->
+  <title>Hope Station — Garden Venue in George, Western Cape</title>
+  <meta name="description" content="Tranquil garden venue at the foot of the Outeniqua mountains. Host corporate retreats, wellness events, workshops, and private gatherings in nature. George, Western Cape.">
+  <link rel="canonical" href="https://claireboshoff.github.io/hopestation-v2/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Hope Station — Garden Venue in George">
-  <meta property="og:description" content="A tranquil garden venue nestled in the Outeniqua mountains. Corporate retreats, wellness events, workshops, and private gatherings.">
-  <meta property="og:image" content="images/hero-meadow-mountains.jpg">
+  <meta property="og:title" content="Hope Station — Garden Venue in George, Western Cape">
+  <meta property="og:description" content="Tranquil garden venue at the foot of the Outeniqua mountains. Corporate retreats, wellness events, workshops, and private gatherings.">
+  <meta property="og:image" content="images/og-image.png">
+  <meta property="og:url" content="https://claireboshoff.github.io/hopestation-v2/">
   <meta property="og:type" content="website">
 
-  <!-- Favicon -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 
-  <!-- Fonts -->
+  <!-- Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            green: { 900: '#1a2e22', 800: '#243a2c', 700: '#305040', 600: '#3d6550', 500: '#5B8050', 400: '#6d9a68', 300: '#90B090', 200: '#A0C090', 100: '#D0E0D0', 50: '#F0F5F0' },
+            sage: { DEFAULT: '#90B090', light: '#A0C090', pale: '#D0E0D0' },
+            earth: { DEFAULT: '#706060', light: '#8a7a7a' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Design System -->
+  <style>
+    :root {
+      --color-primary: #1a2e22;
+      --color-secondary: #305040;
+      --color-accent: #5B8050;
+      --color-sage: #90B090;
+      --color-sage-light: #A0C090;
+      --color-earth: #706060;
+      --color-surface: #F0F5F0;
+      --color-text: #1a2e22;
+      --color-text-muted: #5a6a5a;
+      --glass-bg: rgba(48, 80, 64, 0.06);
+      --glass-border: rgba(48, 80, 64, 0.12);
+      --glass-blur: 20px;
+      --glass-bg-dark: rgba(26, 46, 34, 0.85);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body { background-color: var(--color-surface); color: var(--color-text); }
+
+    /* Glass effect — light variant */
+    .glass {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    /* Glass effect — dark variant (nav, hero overlay) */
+    .glass-dark {
+      background: var(--glass-bg-dark);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Glass card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transition: transform 400ms var(--ease-out), box-shadow 400ms var(--ease-out);
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(48, 80, 64, 0.12);
+    }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--color-accent), var(--color-sage));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Embossed heading */
+    .embossed {
+      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 50%, var(--color-sage) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
+    }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-30px); transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out); }
+    .reveal-left.revealed { opacity: 1; transform: translateX(0); }
+
+    /* Premium button hover */
+    .btn-glow {
+      position: relative; overflow: hidden;
+      transition: transform 200ms var(--ease-out), box-shadow 200ms ease;
+    }
+    .btn-glow:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(91, 128, 80, 0.3);
+    }
+
+    /* Hero slow zoom */
+    .hero-zoom { transform: scale(1.08); transition: transform 12s ease-out; }
+    .hero-zoom.loaded { transform: scale(1); }
+
+    /* Nav scroll state */
+    #navbar.scrolled { background: rgba(26, 46, 34, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+
+    /* Animated counter */
+    .counter { font-variant-numeric: tabular-nums; }
+
+    /* Gallery item hover */
+    .gallery-item img { transition: transform 600ms var(--ease-out); }
+    .gallery-item:hover img { transform: scale(1.06); }
+
+    /* FAQ accordion */
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 400ms var(--ease-out); }
+    .faq-item.active .faq-answer { max-height: 200px; }
+    .faq-icon { transition: transform 300ms var(--ease-out); }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-left { opacity: 1; transform: none; transition: none; }
+      .hero-zoom { transform: none !important; transition: none !important; }
+      .glass-card { transition: none; }
+    }
+  </style>
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -31,195 +172,250 @@
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "EventVenue"],
     "name": "Hope Station",
-    "description": "A tranquil garden venue in George, Western Cape for corporate retreats, wellness events, workshops, and private gatherings.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "George",
-      "addressRegion": "Western Cape",
-      "addressCountry": "ZA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "-33.96",
-      "longitude": "22.46"
-    },
+    "description": "Tranquil garden venue at the foot of the Outeniqua mountains for corporate retreats, wellness events, workshops, and private gatherings.",
+    "image": "https://claireboshoff.github.io/hopestation-v2/images/hero-meadow-mountains.jpg",
+    "address": { "@type": "PostalAddress", "addressLocality": "George", "addressRegion": "Western Cape", "addressCountry": "ZA" },
+    "geo": { "@type": "GeoCoordinates", "latitude": "-33.96", "longitude": "22.46" },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "08:00", "closes": "18:00" }
+    ],
     "maximumAttendeeCapacity": 40,
     "amenityFeature": [
-      {"@type": "LocationFeatureSpecification", "name": "Garden Setting", "value": true},
-      {"@type": "LocationFeatureSpecification", "name": "Mountain Views", "value": true},
-      {"@type": "LocationFeatureSpecification", "name": "Secure Parking", "value": true},
-      {"@type": "LocationFeatureSpecification", "name": "Catering Available", "value": true}
+      { "@type": "LocationFeatureSpecification", "name": "Garden Setting", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Mountain Views", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Secure Parking", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Catering Available", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Wi-Fi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Projector & Screen", "value": true }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How many guests can Hope Station accommodate?", "acceptedAnswer": { "@type": "Answer", "text": "Our boardroom seats up to 20 guests. For larger events using the garden and breakout areas, we accommodate up to 40 guests." }},
+      { "@type": "Question", "name": "What equipment is included?", "acceptedAnswer": { "@type": "Answer", "text": "All bookings include Wi-Fi, projector and screen, whiteboard, flip chart, and a sound system. Tables and chairs configured to suit your format." }},
+      { "@type": "Question", "name": "Is catering available?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tea and coffee, morning and afternoon refreshments, light lunches, and full-day catering packages. Dietary requirements accommodated." }},
+      { "@type": "Question", "name": "Where is Hope Station located?", "acceptedAnswer": { "@type": "Answer", "text": "Just outside George in the Western Cape, at the foot of the Outeniqua mountains. Minutes from the N2 highway and George Airport (GRJ)." }},
+      { "@type": "Question", "name": "Can I visit before booking?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We encourage a site visit. Contact us to arrange a viewing at a time that suits you." }}
     ]
   }
   </script>
 </head>
-<body>
-  <a href="#main" class="skip-link">Skip to content</a>
+<body class="font-sans antialiased">
 
-  <!-- Loader -->
-  <div class="page-loader" aria-hidden="true">
-    <img src="images/logo.png" alt="" class="page-loader__logo">
-  </div>
+  <!-- Skip to content -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-green-700 text-white px-4 py-2 rounded z-[100]">
+    Skip to content
+  </a>
 
   <!-- Navigation -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo" aria-label="Hope Station home">
-        <img src="images/logo.png" alt="Hope Station" width="160" height="52">
-      </a>
-      <ul class="nav__links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#spaces">Spaces</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact" class="btn-nav">Book Now</a></li>
-      </ul>
-      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+  <nav class="fixed top-0 w-full z-50 transition-all duration-500" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="index.html" class="flex items-center" aria-label="Hope Station home">
+          <img src="images/logo.png" alt="Hope Station" class="h-12 lg:h-14 w-auto drop-shadow-md">
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#about" class="text-sm text-white/80 hover:text-white transition-colors">About</a>
+          <a href="#spaces" class="text-sm text-white/80 hover:text-white transition-colors">Spaces</a>
+          <a href="#gallery" class="text-sm text-white/80 hover:text-white transition-colors">Gallery</a>
+          <a href="blog.html" class="text-sm text-white/80 hover:text-white transition-colors">Blog</a>
+          <a href="#faq" class="text-sm text-white/80 hover:text-white transition-colors">FAQ</a>
+          <a href="#contact" class="btn-glow bg-sage text-green-900 px-6 py-2.5 rounded-full text-sm font-semibold">
+            Book Now
+          </a>
+        </div>
+        <button class="md:hidden text-white p-2" id="menu-toggle" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" aria-hidden="true">
-    <a href="#about">About</a>
-    <a href="#spaces">Spaces</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact" class="btn-nav" style="display:inline-block; margin-top:1.5rem; text-align:center;">Book Now</a>
+  <div class="fixed inset-0 bg-green-900/98 backdrop-blur-xl z-[100] flex flex-col items-center justify-center gap-8 transform translate-x-full transition-transform duration-500" id="mobile-menu" style="transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1)">
+    <button class="absolute top-5 right-5 text-white p-2" id="menu-close" aria-label="Close menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <a href="#about" class="text-2xl text-white/80 hover:text-sage transition-colors mobile-link">About</a>
+    <a href="#spaces" class="text-2xl text-white/80 hover:text-sage transition-colors mobile-link">Spaces</a>
+    <a href="#gallery" class="text-2xl text-white/80 hover:text-sage transition-colors mobile-link">Gallery</a>
+    <a href="blog.html" class="text-2xl text-white/80 hover:text-sage transition-colors mobile-link">Blog</a>
+    <a href="#faq" class="text-2xl text-white/80 hover:text-sage transition-colors mobile-link">FAQ</a>
+    <a href="#contact" class="btn-glow bg-sage text-green-900 px-8 py-3 rounded-full text-lg font-semibold mobile-link">Book Now</a>
   </div>
-  <div class="mobile-overlay"></div>
-
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="hero__bg">
-      <picture>
-        <source srcset="images/hero-meadow-mountains.webp" type="image/webp">
-        <img src="images/hero-meadow-mountains.jpg" alt="Lush green meadow with Outeniqua mountains in background" loading="eager">
-      </picture>
-    </div>
-    <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <p class="hero__eyebrow">Garden Venue &middot; George, Western Cape</p>
-      <h1>Where Nature Meets Purpose</h1>
-      <p class="hero__subtitle">Nestled at the foot of the Outeniqua mountains, Hope Station is a tranquil garden venue for corporate retreats, wellness events, and meaningful gatherings.</p>
-      <div class="hero__actions">
-        <a href="#contact" class="btn btn--primary">Enquire Now</a>
-        <a href="#spaces" class="btn btn--outline">Explore Spaces</a>
-      </div>
-    </div>
-  </section>
 
   <main id="main">
 
-    <!-- About Intro -->
-    <section class="about-intro" id="about">
-      <div class="container">
-        <div class="about-intro__grid">
-          <div class="about-intro__image reveal">
-            <picture>
-              <source srcset="images/garden-stone-pathway.webp" type="image/webp">
-              <img src="images/garden-stone-pathway.jpg" alt="Stone pathway through lush gardens at Hope Station" loading="lazy">
-            </picture>
-          </div>
-          <div class="about-intro__text reveal reveal-delay-1">
-            <span class="eyebrow">Our Story</span>
-            <h2>A Calm Space for Clear Thinking</h2>
-            <p>Hope Station was born from a simple belief: the right environment changes everything. Set on a peaceful garden property outside George, our venue offers a rare combination of natural beauty, privacy, and purpose-built spaces.</p>
-            <p>Whether you're planning a corporate strategy day, a wellness retreat, a training workshop, or an intimate private event, our mountain-backed gardens and thoughtfully designed spaces provide the backdrop for meaningful connection and focused work.</p>
-            <p>With capacity for up to 40 guests, we offer the intimacy of a private venue with the infrastructure of a professional events space.</p>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden" id="hero">
+      <div class="absolute inset-0">
+        <picture>
+          <source srcset="images/hero-meadow-mountains.webp" type="image/webp">
+          <img src="images/hero-meadow-mountains.jpg" alt="Lush green meadow with Outeniqua mountains" class="w-full h-full object-cover hero-zoom" id="hero-img" loading="eager">
+        </picture>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-b from-green-900/70 via-green-900/40 to-green-900/60"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div class="max-w-3xl">
+          <p class="text-sm font-semibold text-sage uppercase tracking-[0.2em] mb-6 reveal">Garden Venue &middot; George, Western Cape</p>
+          <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight text-white reveal">
+            Where Nature Meets
+            <span class="embossed"> Purpose</span>
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-white/80 max-w-xl leading-relaxed reveal">
+            Nestled at the foot of the Outeniqua mountains, Hope Station is a tranquil garden venue for corporate retreats, wellness events, and meaningful gatherings.
+          </p>
+          <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal">
+            <a href="#contact" class="btn-glow bg-sage text-green-900 px-8 py-4 rounded-xl text-lg font-semibold text-center">
+              Enquire Now
+            </a>
+            <a href="#spaces" class="glass px-8 py-4 rounded-xl text-lg font-medium text-center text-white hover:bg-white/10 transition-colors">
+              Explore Spaces
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Offerings -->
-    <section class="offerings" id="spaces">
-      <div class="container">
-        <div class="offerings__header reveal">
-          <span class="eyebrow">What We Offer</span>
-          <h2>Spaces Designed for <span class="gradient-text">Every Occasion</span></h2>
-          <p>From focused boardroom sessions to open-air wellness retreats, our versatile venue adapts to your needs.</p>
+    <!-- Trust Bar -->
+    <section class="bg-white border-y border-green-100 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="reveal">
+            <div class="text-3xl sm:text-4xl font-bold gradient-text counter" data-target="40">0</div>
+            <div class="text-sm text-green-700/60 mt-2 font-medium">Guest Capacity</div>
+          </div>
+          <div class="reveal">
+            <div class="text-3xl sm:text-4xl font-bold gradient-text counter" data-target="6">0</div>
+            <div class="text-sm text-green-700/60 mt-2 font-medium">Event Types</div>
+          </div>
+          <div class="reveal">
+            <div class="text-3xl sm:text-4xl font-bold gradient-text">360&deg;</div>
+            <div class="text-sm text-green-700/60 mt-2 font-medium">Mountain Views</div>
+          </div>
+          <div class="reveal">
+            <div class="text-3xl sm:text-4xl font-bold gradient-text counter" data-target="24">0</div>
+            <div class="text-sm text-green-700/60 mt-2 font-medium">Hour Response</div>
+          </div>
         </div>
-        <div class="offerings__grid">
+      </div>
+    </section>
 
-          <div class="offering-card reveal reveal-delay-1">
-            <div class="offering-card__image">
+    <!-- About Section -->
+    <section id="about" class="py-24 lg:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="reveal-left">
+            <p class="text-sm font-semibold text-green-600 uppercase tracking-wider mb-4">Our Story</p>
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+              A Calm Space for <span class="gradient-text">Clear Thinking</span>
+            </h2>
+            <p class="mt-6 text-green-800/70 text-lg leading-relaxed">
+              Hope Station was born from a simple belief: the right environment changes everything. Set on a peaceful garden property outside George, our venue offers a rare combination of natural beauty, privacy, and purpose-built spaces.
+            </p>
+            <p class="mt-4 text-green-800/70 text-lg leading-relaxed">
+              Whether you're planning a corporate strategy day, a wellness retreat, or an intimate gathering, our mountain-backed gardens provide the backdrop for meaningful connection and focused work.
+            </p>
+            <a href="#spaces" class="inline-flex items-center gap-2 mt-8 text-green-700 font-semibold hover:gap-3 transition-all">
+              Explore our spaces
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="reveal">
+            <div class="glass-card rounded-2xl overflow-hidden shadow-xl">
               <picture>
-                <source srcset="images/cabin-exterior-garden.webp" type="image/webp">
-                <img src="images/cabin-exterior-garden.jpg" alt="Wooden venue building surrounded by gardens" loading="lazy">
+                <source srcset="images/garden-stone-pathway.webp" type="image/webp">
+                <img src="images/garden-stone-pathway.jpg" alt="Stone pathway through lush gardens at Hope Station" class="w-full h-full object-cover aspect-[4/5]" loading="lazy" width="901" height="1600">
               </picture>
             </div>
-            <div class="offering-card__body">
-              <h3>Corporate Retreats</h3>
-              <p>Strategy days, team building, and planning sessions in a focused environment away from the office. Boardroom and breakout spaces available.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="spaces" class="py-24 lg:py-32 bg-white/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <p class="text-sm font-semibold text-green-600 uppercase tracking-wider mb-4">What We Offer</p>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
+            Spaces for <span class="gradient-text">Every Occasion</span>
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div class="glass-card rounded-2xl overflow-hidden reveal">
+            <div class="h-56 overflow-hidden">
+              <picture><source srcset="images/cabin-exterior-garden.webp" type="image/webp">
+              <img src="images/cabin-exterior-garden.jpg" alt="Wooden venue building with gardens" class="w-full h-full object-cover" loading="lazy" width="1599" height="899"></picture>
+            </div>
+            <div class="p-7">
+              <h3 class="font-display text-xl font-bold text-green-800 mb-2">Corporate Retreats</h3>
+              <p class="text-green-700/70 leading-relaxed">Strategy days, team building, and planning sessions in a focused environment away from the office. Boardroom and breakout spaces available.</p>
             </div>
           </div>
 
-          <div class="offering-card reveal reveal-delay-2">
-            <div class="offering-card__image">
-              <picture>
-                <source srcset="images/garden-picnic-area.webp" type="image/webp">
-                <img src="images/garden-picnic-area.jpg" alt="Peaceful garden picnic area with lush greenery" loading="lazy">
-              </picture>
+          <div class="glass-card rounded-2xl overflow-hidden reveal">
+            <div class="h-56 overflow-hidden">
+              <picture><source srcset="images/garden-picnic-area.webp" type="image/webp">
+              <img src="images/garden-picnic-area.jpg" alt="Peaceful garden picnic area" class="w-full h-full object-cover" loading="lazy" width="901" height="1600"></picture>
             </div>
-            <div class="offering-card__body">
-              <h3>Wellness Events</h3>
-              <p>Yoga retreats, healing workshops, and mindfulness sessions surrounded by birdsong and mountain views. Indoor and outdoor spaces available.</p>
+            <div class="p-7">
+              <h3 class="font-display text-xl font-bold text-green-800 mb-2">Wellness Events</h3>
+              <p class="text-green-700/70 leading-relaxed">Yoga retreats, healing workshops, and mindfulness sessions surrounded by birdsong and mountain views. Indoor and outdoor spaces available.</p>
             </div>
           </div>
 
-          <div class="offering-card reveal reveal-delay-3">
-            <div class="offering-card__image">
-              <picture>
-                <source srcset="images/gate-mountain-view.webp" type="image/webp">
-                <img src="images/gate-mountain-view.jpg" alt="Property entrance with stunning Outeniqua mountain backdrop" loading="lazy">
-              </picture>
+          <div class="glass-card rounded-2xl overflow-hidden reveal">
+            <div class="h-56 overflow-hidden">
+              <picture><source srcset="images/gate-mountain-view.webp" type="image/webp">
+              <img src="images/gate-mountain-view.jpg" alt="Property entrance with Outeniqua mountain backdrop" class="w-full h-full object-cover" loading="lazy" width="1600" height="901"></picture>
             </div>
-            <div class="offering-card__body">
-              <h3>Training & Workshops</h3>
-              <p>Multi-day training programmes with catering, equipment, and comfortable spaces for focused learning and professional development.</p>
+            <div class="p-7">
+              <h3 class="font-display text-xl font-bold text-green-800 mb-2">Training & Workshops</h3>
+              <p class="text-green-700/70 leading-relaxed">Multi-day training programmes with catering, equipment, and comfortable spaces for focused learning and professional development.</p>
             </div>
           </div>
 
-          <div class="offering-card reveal reveal-delay-1">
-            <div class="offering-card__image">
-              <picture>
-                <source srcset="images/two-women-outdoors.webp" type="image/webp">
-                <img src="images/two-women-outdoors.jpg" alt="Two women at Hope Station garden event" loading="lazy">
-              </picture>
+          <div class="glass-card rounded-2xl overflow-hidden reveal">
+            <div class="h-56 overflow-hidden">
+              <picture><source srcset="images/two-women-outdoors.webp" type="image/webp">
+              <img src="images/two-women-outdoors.jpg" alt="Guests at Hope Station garden event" class="w-full h-full object-cover" loading="lazy" width="1024" height="683"></picture>
             </div>
-            <div class="offering-card__body">
-              <h3>Guest Speakers</h3>
-              <p>Host talks, book launches, or speaker events in an intimate setting that encourages genuine engagement and conversation.</p>
+            <div class="p-7">
+              <h3 class="font-display text-xl font-bold text-green-800 mb-2">Guest Speakers</h3>
+              <p class="text-green-700/70 leading-relaxed">Host talks, book launches, or speaker events in an intimate setting that encourages genuine engagement and conversation.</p>
             </div>
           </div>
 
-          <div class="offering-card reveal reveal-delay-2">
-            <div class="offering-card__image">
-              <picture>
-                <source srcset="images/two-women-rose.webp" type="image/webp">
-                <img src="images/two-women-rose.jpg" alt="Warm moment between guests at Hope Station" loading="lazy">
-              </picture>
+          <div class="glass-card rounded-2xl overflow-hidden reveal">
+            <div class="h-56 overflow-hidden">
+              <picture><source srcset="images/two-women-rose.webp" type="image/webp">
+              <img src="images/two-women-rose.jpg" alt="Warm moment between guests at Hope Station" class="w-full h-full object-cover" loading="lazy" width="1600" height="901"></picture>
             </div>
-            <div class="offering-card__body">
-              <h3>Private Events</h3>
-              <p>Intimate celebrations, milestone gatherings, and special occasions in a beautiful garden setting with mountain views and natural charm.</p>
+            <div class="p-7">
+              <h3 class="font-display text-xl font-bold text-green-800 mb-2">Private Events</h3>
+              <p class="text-green-700/70 leading-relaxed">Intimate celebrations, milestone gatherings, and special occasions in a beautiful garden setting with mountain views and natural charm.</p>
             </div>
           </div>
 
-          <div class="offering-card reveal reveal-delay-3">
-            <div class="offering-card__image">
-              <picture>
-                <source srcset="images/entrance-tree-road.webp" type="image/webp">
-                <img src="images/entrance-tree-road.jpg" alt="Tree-lined entrance road to Hope Station" loading="lazy">
-              </picture>
+          <div class="glass-card rounded-2xl overflow-hidden reveal">
+            <div class="h-56 overflow-hidden">
+              <picture><source srcset="images/entrance-tree-road.webp" type="image/webp">
+              <img src="images/entrance-tree-road.jpg" alt="Tree-lined entrance road to Hope Station" class="w-full h-full object-cover" loading="lazy" width="1156" height="651"></picture>
             </div>
-            <div class="offering-card__body">
-              <h3>Custom Experiences</h3>
-              <p>Have something unique in mind? We work with you to create bespoke event experiences tailored to your vision and goals.</p>
+            <div class="p-7">
+              <h3 class="font-display text-xl font-bold text-green-800 mb-2">Custom Experiences</h3>
+              <p class="text-green-700/70 leading-relaxed">Have something unique in mind? We work with you to create bespoke event experiences tailored to your vision and goals.</p>
             </div>
           </div>
 
@@ -227,261 +423,273 @@
       </div>
     </section>
 
-    <!-- Features -->
-    <section class="features">
-      <div class="container">
-        <div class="offerings__header reveal">
-          <span class="eyebrow">Why Hope Station</span>
-          <h2>Everything You Need, <span class="gradient-text">Nothing You Don't</span></h2>
+    <!-- Features (Why Hope Station) -->
+    <section class="py-24 lg:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <p class="text-sm font-semibold text-green-600 uppercase tracking-wider mb-4">Why Hope Station</p>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
+            Everything You Need, <span class="gradient-text">Nothing You Don't</span>
+          </h2>
         </div>
-        <div class="features__grid">
-          <div class="feature-item reveal reveal-delay-1">
-            <div class="feature-item__icon">&#x1F3D4;</div>
-            <h3>Mountain Setting</h3>
-            <p>Surrounded by the Outeniqua mountains with panoramic views, fresh air, and the peace that only nature can provide.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="glass-card rounded-2xl p-8 text-center reveal">
+            <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-7 h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-green-800 mb-3">Mountain Setting</h3>
+            <p class="text-green-700/70 text-sm leading-relaxed">Surrounded by the Outeniqua mountains with panoramic views, fresh air, and the peace that only nature provides.</p>
           </div>
-          <div class="feature-item reveal reveal-delay-2">
-            <div class="feature-item__icon">&#x1F33F;</div>
-            <h3>Garden Grounds</h3>
-            <p>Manicured gardens with multiple outdoor breakout areas, pathways, and seating for informal sessions and fresh-air breaks.</p>
+          <div class="glass-card rounded-2xl p-8 text-center reveal">
+            <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-7 h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-green-800 mb-3">Garden Grounds</h3>
+            <p class="text-green-700/70 text-sm leading-relaxed">Manicured gardens with outdoor breakout areas, pathways, and seating for informal sessions and fresh-air breaks.</p>
           </div>
-          <div class="feature-item reveal reveal-delay-3">
-            <div class="feature-item__icon">&#x1F512;</div>
-            <h3>Private & Secure</h3>
-            <p>Gated property with dedicated parking ensures your event runs smoothly with complete privacy and safety.</p>
+          <div class="glass-card rounded-2xl p-8 text-center reveal">
+            <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-7 h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-green-800 mb-3">Private & Secure</h3>
+            <p class="text-green-700/70 text-sm leading-relaxed">Gated property with dedicated parking ensures your event runs smoothly with complete privacy and safety.</p>
           </div>
-          <div class="feature-item reveal reveal-delay-1">
-            <div class="feature-item__icon">&#x1F37D;</div>
-            <h3>Catering Available</h3>
-            <p>From tea and coffee to full-day catering, we handle the food so you can focus on your event. Dietary requirements accommodated.</p>
+          <div class="glass-card rounded-2xl p-8 text-center reveal">
+            <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-7 h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-green-800 mb-3">Fully Equipped</h3>
+            <p class="text-green-700/70 text-sm leading-relaxed">Projector, screen, whiteboard, Wi-Fi, and sound system included. Boardroom seats 20; breakout areas for 40.</p>
           </div>
-          <div class="feature-item reveal reveal-delay-2">
-            <div class="feature-item__icon">&#x1F4BB;</div>
-            <h3>Equipped Spaces</h3>
-            <p>Projector, screen, whiteboard, Wi-Fi, and sound system included. Boardroom seats up to 20; breakout areas for 40.</p>
+          <div class="glass-card rounded-2xl p-8 text-center reveal">
+            <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-7 h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 15.999A2 2 0 0119 18H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v9.999zM12 18v3M8 21h8"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-green-800 mb-3">Catering Available</h3>
+            <p class="text-green-700/70 text-sm leading-relaxed">Tea and coffee to full-day catering packages. Dietary requirements accommodated with advance notice.</p>
           </div>
-          <div class="feature-item reveal reveal-delay-3">
-            <div class="feature-item__icon">&#x1F4CD;</div>
-            <h3>Easy to Reach</h3>
-            <p>Minutes from George CBD and the N2. Easy access from George Airport (GRJ) with clear directions provided on booking.</p>
+          <div class="glass-card rounded-2xl p-8 text-center reveal">
+            <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-7 h-7 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <h3 class="font-display text-lg font-bold text-green-800 mb-3">Easy to Reach</h3>
+            <p class="text-green-700/70 text-sm leading-relaxed">Minutes from George CBD and the N2. Easy access from George Airport (GRJ) with directions provided on booking.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Gallery -->
-    <section class="gallery" id="gallery">
-      <div class="container">
-        <div class="gallery__header reveal">
-          <span class="eyebrow">Gallery</span>
-          <h2>A Glimpse of <span class="gradient-text">Hope Station</span></h2>
-          <p>Discover our gardens, mountain views, and thoughtfully designed spaces.</p>
+    <section id="gallery" class="py-24 lg:py-32 bg-white/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+          <p class="text-sm font-semibold text-green-600 uppercase tracking-wider mb-4">Gallery</p>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">
+            A Glimpse of <span class="gradient-text">Hope Station</span>
+          </h2>
         </div>
-        <div class="gallery__grid">
-          <div class="gallery__item gallery__item--wide reveal">
-            <picture>
-              <source srcset="images/hero-meadow-mountains.webp" type="image/webp">
-              <img src="images/hero-meadow-mountains.jpg" alt="Green meadow with Outeniqua mountains" loading="lazy">
-            </picture>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[200px] md:auto-rows-[240px]">
+          <div class="gallery-item rounded-xl overflow-hidden col-span-2 reveal">
+            <picture><source srcset="images/hero-meadow-mountains.webp" type="image/webp"><img src="images/hero-meadow-mountains.jpg" alt="Green meadow with Outeniqua mountains" class="w-full h-full object-cover" loading="lazy"></picture>
           </div>
-          <div class="gallery__item reveal reveal-delay-1">
-            <picture>
-              <source srcset="images/garden-stone-pathway.webp" type="image/webp">
-              <img src="images/garden-stone-pathway.jpg" alt="Stone pathway through gardens" loading="lazy">
-            </picture>
+          <div class="gallery-item rounded-xl overflow-hidden reveal">
+            <picture><source srcset="images/garden-stone-pathway.webp" type="image/webp"><img src="images/garden-stone-pathway.jpg" alt="Stone pathway through gardens" class="w-full h-full object-cover" loading="lazy"></picture>
           </div>
-          <div class="gallery__item reveal reveal-delay-2">
-            <picture>
-              <source srcset="images/cabin-exterior-garden.webp" type="image/webp">
-              <img src="images/cabin-exterior-garden.jpg" alt="Venue building with gardens" loading="lazy">
-            </picture>
+          <div class="gallery-item rounded-xl overflow-hidden reveal">
+            <picture><source srcset="images/cabin-exterior-garden.webp" type="image/webp"><img src="images/cabin-exterior-garden.jpg" alt="Venue building with gardens" class="w-full h-full object-cover" loading="lazy"></picture>
           </div>
-          <div class="gallery__item reveal reveal-delay-1">
-            <picture>
-              <source srcset="images/garden-picnic-area.webp" type="image/webp">
-              <img src="images/garden-picnic-area.jpg" alt="Garden picnic area" loading="lazy">
-            </picture>
+          <div class="gallery-item rounded-xl overflow-hidden reveal">
+            <picture><source srcset="images/garden-picnic-area.webp" type="image/webp"><img src="images/garden-picnic-area.jpg" alt="Garden picnic area" class="w-full h-full object-cover" loading="lazy"></picture>
           </div>
-          <div class="gallery__item gallery__item--wide reveal reveal-delay-2">
-            <picture>
-              <source srcset="images/gate-mountain-view.webp" type="image/webp">
-              <img src="images/gate-mountain-view.jpg" alt="Entrance with mountain views" loading="lazy">
-            </picture>
+          <div class="gallery-item rounded-xl overflow-hidden col-span-2 reveal">
+            <picture><source srcset="images/gate-mountain-view.webp" type="image/webp"><img src="images/gate-mountain-view.jpg" alt="Entrance with mountain views" class="w-full h-full object-cover" loading="lazy"></picture>
           </div>
-          <div class="gallery__item reveal">
-            <picture>
-              <source srcset="images/snow-capped-mountains.webp" type="image/webp">
-              <img src="images/snow-capped-mountains.jpg" alt="Snow-capped Outeniqua peaks" loading="lazy">
-            </picture>
+          <div class="gallery-item rounded-xl overflow-hidden reveal">
+            <picture><source srcset="images/snow-capped-mountains.webp" type="image/webp"><img src="images/snow-capped-mountains.jpg" alt="Snow-capped Outeniqua peaks" class="w-full h-full object-cover" loading="lazy"></picture>
           </div>
-          <div class="gallery__item gallery__item--wide reveal reveal-delay-1">
-            <picture>
-              <source srcset="images/hero-green-hills.webp" type="image/webp">
-              <img src="images/hero-green-hills.jpg" alt="Rolling green hills of the Outeniqua" loading="lazy">
-            </picture>
+          <div class="gallery-item rounded-xl overflow-hidden col-span-2 reveal">
+            <picture><source srcset="images/hero-green-hills.webp" type="image/webp"><img src="images/hero-green-hills.jpg" alt="Rolling green hills" class="w-full h-full object-cover" loading="lazy"></picture>
           </div>
-          <div class="gallery__item reveal reveal-delay-2">
-            <picture>
-              <source srcset="images/entrance-tree-road.webp" type="image/webp">
-              <img src="images/entrance-tree-road.jpg" alt="Tree-lined road to venue" loading="lazy">
-            </picture>
+          <div class="gallery-item rounded-xl overflow-hidden reveal">
+            <picture><source srcset="images/entrance-tree-road.webp" type="image/webp"><img src="images/entrance-tree-road.jpg" alt="Tree-lined road" class="w-full h-full object-cover" loading="lazy"></picture>
           </div>
-          <div class="gallery__item reveal">
-            <picture>
-              <source srcset="images/garden-birdbath-fountain.webp" type="image/webp">
-              <img src="images/garden-birdbath-fountain.jpg" alt="Garden fountain and birdbath" loading="lazy">
-            </picture>
+          <div class="gallery-item rounded-xl overflow-hidden reveal">
+            <picture><source srcset="images/garden-birdbath-fountain.webp" type="image/webp"><img src="images/garden-birdbath-fountain.jpg" alt="Garden fountain" class="w-full h-full object-cover" loading="lazy"></picture>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
-      <div class="container">
-        <div class="testimonials__header reveal">
-          <span class="eyebrow" style="color:var(--sage)">What People Say</span>
-          <h2>Trusted by Teams & Organisers</h2>
-          <p>Hear from those who've experienced the Hope Station difference.</p>
+    <section class="py-24 lg:py-32 bg-green-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <p class="text-sm font-semibold text-sage uppercase tracking-wider mb-4">Testimonials</p>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white">What People Say</h2>
         </div>
-        <div class="testimonials__grid">
-          <div class="testimonial-card reveal reveal-delay-1">
-            <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>"The setting is extraordinary. Our team came away from the strategy day feeling refreshed, aligned, and genuinely inspired. The mountain views alone are worth the visit."</blockquote>
-            <p class="testimonial-card__author">— Corporate Strategy Day Organiser</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="glass-dark rounded-2xl p-8 reveal">
+            <div class="text-yellow-400 mb-4 tracking-wider">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="text-white/85 leading-relaxed mb-6 italic">"The setting is extraordinary. Our team came away from the strategy day feeling refreshed, aligned, and genuinely inspired. The mountain views alone are worth the visit."</p>
+            <div class="font-semibold text-sage text-sm">-- Corporate Strategy Day Organiser</div>
           </div>
-          <div class="testimonial-card reveal reveal-delay-2">
-            <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>"We hosted a wellness retreat at Hope Station and the gardens, privacy, and peaceful atmosphere created exactly the environment our participants needed. Truly special."</blockquote>
-            <p class="testimonial-card__author">— Wellness Facilitator, Garden Route</p>
+          <div class="glass-dark rounded-2xl p-8 reveal">
+            <div class="text-yellow-400 mb-4 tracking-wider">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="text-white/85 leading-relaxed mb-6 italic">"We hosted a wellness retreat and the gardens, privacy, and peaceful atmosphere created exactly the environment our participants needed. Truly special."</p>
+            <div class="font-semibold text-sage text-sm">-- Wellness Facilitator, Garden Route</div>
           </div>
-          <div class="testimonial-card reveal reveal-delay-1">
-            <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>"Everything was taken care of — the space, the equipment, the catering. We could focus entirely on our workshop content without worrying about logistics."</blockquote>
-            <p class="testimonial-card__author">— Training Workshop Facilitator</p>
-          </div>
-          <div class="testimonial-card reveal reveal-delay-2">
-            <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>"An intimate, beautifully maintained venue with a personal touch. Our private event felt special from the moment guests arrived. Highly recommend."</blockquote>
-            <p class="testimonial-card__author">— Private Event Host</p>
+          <div class="glass-dark rounded-2xl p-8 reveal">
+            <div class="text-yellow-400 mb-4 tracking-wider">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="text-white/85 leading-relaxed mb-6 italic">"Everything was taken care of -- the space, the equipment, the catering. We could focus entirely on our workshop content without worrying about logistics."</p>
+            <div class="font-semibold text-sage text-sm">-- Training Workshop Facilitator</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="faq" id="faq">
-      <div class="container">
-        <div class="faq__header reveal">
-          <span class="eyebrow">Frequently Asked</span>
-          <h2>Questions & Answers</h2>
-          <p>Everything you need to know about hosting your event at Hope Station.</p>
+    <section id="faq" class="py-24 lg:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+          <p class="text-sm font-semibold text-green-600 uppercase tracking-wider mb-4">FAQ</p>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">Questions & Answers</h2>
         </div>
-        <div class="faq__list">
-          <div class="faq-item reveal">
-            <button class="faq-item__question" aria-expanded="false">
+        <div class="max-w-3xl mx-auto space-y-0 divide-y divide-green-200">
+          <div class="faq-item py-0 reveal">
+            <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-display text-lg font-semibold text-green-800 hover:text-green-600 transition-colors" aria-expanded="false">
               <span>How many guests can Hope Station accommodate?</span>
-              <span class="faq-item__icon">+</span>
+              <span class="faq-icon text-green-500 text-2xl leading-none">+</span>
             </button>
-            <div class="faq-item__answer" role="region">
-              <p>Our boardroom comfortably seats up to 20 guests for focused sessions. For larger events using the garden and breakout areas, we can accommodate up to 40 guests. We recommend discussing your specific needs when you enquire.</p>
-            </div>
+            <div class="faq-answer"><p class="pb-5 text-green-700/70 leading-relaxed">Our boardroom comfortably seats up to 20 guests. For larger events using the garden and breakout areas, we accommodate up to 40 guests. We recommend discussing your specific needs when you enquire.</p></div>
           </div>
-          <div class="faq-item reveal reveal-delay-1">
-            <button class="faq-item__question" aria-expanded="false">
+          <div class="faq-item py-0 reveal">
+            <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-display text-lg font-semibold text-green-800 hover:text-green-600 transition-colors" aria-expanded="false">
               <span>What equipment is included?</span>
-              <span class="faq-item__icon">+</span>
+              <span class="faq-icon text-green-500 text-2xl leading-none">+</span>
             </button>
-            <div class="faq-item__answer" role="region">
-              <p>All bookings include Wi-Fi, a projector and screen, whiteboard, flip chart, and a sound system. Tables and chairs can be configured to suit your event format — boardroom, classroom, U-shape, or theatre style.</p>
-            </div>
+            <div class="faq-answer"><p class="pb-5 text-green-700/70 leading-relaxed">All bookings include Wi-Fi, a projector and screen, whiteboard, flip chart, and a sound system. Tables and chairs can be configured to suit your format -- boardroom, classroom, U-shape, or theatre style.</p></div>
           </div>
-          <div class="faq-item reveal reveal-delay-2">
-            <button class="faq-item__question" aria-expanded="false">
+          <div class="faq-item py-0 reveal">
+            <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-display text-lg font-semibold text-green-800 hover:text-green-600 transition-colors" aria-expanded="false">
               <span>Is catering available?</span>
-              <span class="faq-item__icon">+</span>
+              <span class="faq-icon text-green-500 text-2xl leading-none">+</span>
             </button>
-            <div class="faq-item__answer" role="region">
-              <p>Yes. We offer tea and coffee service, morning and afternoon refreshments, light lunches, and full-day catering packages. Dietary requirements and preferences are accommodated with advance notice.</p>
-            </div>
+            <div class="faq-answer"><p class="pb-5 text-green-700/70 leading-relaxed">Yes. We offer tea and coffee, morning and afternoon refreshments, light lunches, and full-day catering packages. Dietary requirements and preferences are accommodated with advance notice.</p></div>
           </div>
-          <div class="faq-item reveal reveal-delay-3">
-            <button class="faq-item__question" aria-expanded="false">
+          <div class="faq-item py-0 reveal">
+            <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-display text-lg font-semibold text-green-800 hover:text-green-600 transition-colors" aria-expanded="false">
               <span>Where exactly is Hope Station?</span>
-              <span class="faq-item__icon">+</span>
+              <span class="faq-icon text-green-500 text-2xl leading-none">+</span>
             </button>
-            <div class="faq-item__answer" role="region">
-              <p>We're located just outside George in the Western Cape, at the foot of the Outeniqua mountains. We're minutes from the N2 highway and George Airport (GRJ). Detailed directions and a GPS pin are provided when you book.</p>
-            </div>
+            <div class="faq-answer"><p class="pb-5 text-green-700/70 leading-relaxed">We're located just outside George in the Western Cape, at the foot of the Outeniqua mountains. Minutes from the N2 highway and George Airport (GRJ). Detailed directions and a GPS pin are provided when you book.</p></div>
           </div>
-          <div class="faq-item reveal reveal-delay-4">
-            <button class="faq-item__question" aria-expanded="false">
+          <div class="faq-item py-0 reveal">
+            <button class="faq-trigger w-full flex items-center justify-between py-5 text-left font-display text-lg font-semibold text-green-800 hover:text-green-600 transition-colors" aria-expanded="false">
               <span>Can I visit before booking?</span>
-              <span class="faq-item__icon">+</span>
+              <span class="faq-icon text-green-500 text-2xl leading-none">+</span>
             </button>
-            <div class="faq-item__answer" role="region">
-              <p>Absolutely. We encourage a site visit so you can experience the space and discuss your event requirements in person. Contact us to arrange a viewing at a time that suits you.</p>
-            </div>
+            <div class="faq-answer"><p class="pb-5 text-green-700/70 leading-relaxed">Absolutely. We encourage a site visit so you can experience the space and discuss your event requirements in person. Contact us to arrange a viewing at a time that suits you.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <div class="container reveal">
-        <h2>Ready to Host Something Meaningful?</h2>
-        <p>Tell us about your event and we'll help you create an experience your guests won't forget.</p>
-        <a href="#contact" class="btn btn--primary">Get in Touch</a>
+    <!-- CTA Section -->
+    <section class="py-24 lg:py-32 bg-green-800 text-white text-center relative overflow-hidden">
+      <div class="absolute inset-0 opacity-20">
+        <picture><source srcset="images/hero-green-hills.webp" type="image/webp"><img src="images/hero-green-hills.jpg" alt="" class="w-full h-full object-cover" loading="lazy" aria-hidden="true"></picture>
+      </div>
+      <div class="absolute inset-0 bg-green-900/80"></div>
+      <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold">Ready to Host Something Meaningful?</h2>
+        <p class="mt-6 text-lg text-white/70">Tell us about your event and we'll help create an experience your guests won't forget.</p>
+        <div class="mt-10">
+          <a href="#contact" class="btn-glow bg-sage text-green-900 px-8 py-4 rounded-xl text-lg font-semibold inline-block">
+            Get in Touch
+          </a>
+        </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="contact-band" id="contact">
-      <div class="container">
-        <div class="contact-band__grid">
-          <div class="contact-band__info reveal">
-            <span class="eyebrow">Get in Touch</span>
-            <h2>Let's Plan Your Event</h2>
-            <p>Whether you have a date in mind or you're still exploring options, we'd love to hear from you. Send us a message and we'll get back to you within 24 hours.</p>
-            <ul class="contact-band__details">
-              <li><strong>Location</strong> George, Western Cape, South Africa</li>
-              <li><strong>Email</strong> info@hopestation.co.za</li>
-              <li><strong>Phone</strong> Available on enquiry</li>
-              <li><strong>Hours</strong> Mon–Fri: 08:00–21:00 &middot; Sat–Sun: 08:00–18:00</li>
-            </ul>
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 lg:py-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div class="reveal-left">
+            <p class="text-sm font-semibold text-green-600 uppercase tracking-wider mb-4">Get in Touch</p>
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+              Let's Plan <span class="gradient-text">Your Event</span>
+            </h2>
+            <p class="mt-6 text-green-800/70 text-lg leading-relaxed">
+              Whether you have a date in mind or you're still exploring options, we'd love to hear from you. Send us a message and we'll get back to you within 24 hours.
+            </p>
+            <div class="mt-8 space-y-4">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                </div>
+                <div>
+                  <div class="font-semibold text-green-800">Location</div>
+                  <div class="text-green-700/70">George, Western Cape, South Africa</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                  <div class="font-semibold text-green-800">Email</div>
+                  <div class="text-green-700/70">info@hopestation.co.za</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                  <div class="font-semibold text-green-800">Hours</div>
+                  <div class="text-green-700/70">Mon-Fri: 08:00-21:00 &middot; Sat-Sun: 08:00-18:00</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <form class="contact-form reveal reveal-delay-1" id="contact-form">
-            <div class="form-group">
-              <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your full name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="072 000 0000">
-            </div>
-            <div class="form-group">
-              <label for="event-type">Event Type</label>
-              <select id="event-type" name="event_type">
-                <option value="">Select an option</option>
-                <option value="Corporate Retreat">Corporate Retreat</option>
-                <option value="Wellness Event">Wellness Event</option>
-                <option value="Training / Workshop">Training / Workshop</option>
-                <option value="Guest Speaker">Guest Speaker Event</option>
-                <option value="Private Event">Private Event</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Tell Us About Your Event *</label>
-              <textarea id="message" name="message" required placeholder="Dates, number of guests, any special requirements..."></textarea>
-            </div>
-            <button type="submit" class="btn btn--dark" style="width:100%; justify-content:center;">Send Enquiry</button>
-          </form>
+          <div class="reveal">
+            <form class="glass-card rounded-2xl p-8" id="contact-form">
+              <div class="space-y-5">
+                <div>
+                  <label for="name" class="block text-sm font-semibold text-green-800 mb-1.5">Full Name *</label>
+                  <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your full name" class="w-full px-4 py-3 rounded-xl bg-white/80 border border-green-200 text-green-900 placeholder-green-400 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all">
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-semibold text-green-800 mb-1.5">Email *</label>
+                  <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-xl bg-white/80 border border-green-200 text-green-900 placeholder-green-400 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all">
+                </div>
+                <div>
+                  <label for="phone" class="block text-sm font-semibold text-green-800 mb-1.5">Phone</label>
+                  <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="072 000 0000" class="w-full px-4 py-3 rounded-xl bg-white/80 border border-green-200 text-green-900 placeholder-green-400 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all">
+                </div>
+                <div>
+                  <label for="event-type" class="block text-sm font-semibold text-green-800 mb-1.5">Event Type</label>
+                  <select id="event-type" name="event_type" class="w-full px-4 py-3 rounded-xl bg-white/80 border border-green-200 text-green-900 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all">
+                    <option value="">Select an option</option>
+                    <option value="Corporate Retreat">Corporate Retreat</option>
+                    <option value="Wellness Event">Wellness Event</option>
+                    <option value="Training / Workshop">Training / Workshop</option>
+                    <option value="Guest Speaker">Guest Speaker Event</option>
+                    <option value="Private Event">Private Event</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-semibold text-green-800 mb-1.5">Tell Us About Your Event *</label>
+                  <textarea id="message" name="message" required rows="4" placeholder="Dates, number of guests, any special requirements..." class="w-full px-4 py-3 rounded-xl bg-white/80 border border-green-200 text-green-900 placeholder-green-400 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all resize-vertical"></textarea>
+                </div>
+                <button type="submit" class="btn-glow w-full bg-green-700 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-green-600 transition-colors">
+                  Send Enquiry
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -489,43 +697,44 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <img src="images/logo.png" alt="Hope Station" width="140" height="46">
-          <p>A tranquil garden venue at the foot of the Outeniqua mountains. Host your next meaningful gathering with us.</p>
+  <footer class="bg-green-900 text-white/70 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div>
+          <img src="images/logo.png" alt="Hope Station" class="h-14 w-auto mb-4 brightness-0 invert opacity-80">
+          <p class="text-sm leading-relaxed max-w-xs">A tranquil garden venue at the foot of the Outeniqua mountains. Host your next meaningful gathering with us.</p>
         </div>
         <div>
-          <h4>Venue</h4>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#spaces">Spaces</a></li>
-            <li><a href="#gallery">Gallery</a></li>
+          <h4 class="text-white font-semibold text-sm mb-4">Venue</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#about" class="hover:text-sage transition-colors">About</a></li>
+            <li><a href="#spaces" class="hover:text-sage transition-colors">Spaces</a></li>
+            <li><a href="#gallery" class="hover:text-sage transition-colors">Gallery</a></li>
+            <li><a href="blog.html" class="hover:text-sage transition-colors">Blog</a></li>
           </ul>
         </div>
         <div>
-          <h4>Info</h4>
-          <ul>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#contact">Book Now</a></li>
+          <h4 class="text-white font-semibold text-sm mb-4">Info</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#faq" class="hover:text-sage transition-colors">FAQ</a></li>
+            <li><a href="#contact" class="hover:text-sage transition-colors">Contact</a></li>
+            <li><a href="#contact" class="hover:text-sage transition-colors">Book Now</a></li>
           </ul>
         </div>
         <div>
-          <h4>Location</h4>
-          <ul>
+          <h4 class="text-white font-semibold text-sm mb-4">Location</h4>
+          <ul class="space-y-2 text-sm">
             <li>George, Western Cape</li>
             <li>South Africa</li>
-            <li style="margin-top:0.5rem"><a href="#contact">Get Directions</a></li>
+            <li class="pt-1"><a href="#contact" class="hover:text-sage transition-colors">Get Directions</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer__bar">
-        <p>&copy; 2026 Hope Station. All rights reserved.</p>
-        <div class="footer__social">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Instagram">in</a>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-sm">&copy; 2026 Hope Station. All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:bg-sage hover:border-sage hover:text-green-900 transition-all text-sm" aria-label="Facebook">f</a>
+          <a href="#" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center hover:bg-sage hover:border-sage hover:text-green-900 transition-all text-sm" aria-label="Instagram">ig</a>
         </div>
       </div>
     </div>
@@ -533,6 +742,7 @@
 
   <!-- Scripts -->
   <script src="js/config.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/chat-widget.js" defer></script>
 </body>
 </html>

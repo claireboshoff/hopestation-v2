@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO -->
+  <title>Blog — Hope Station | Garden Venue in George</title>
+  <meta name="description" content="Insights, tips and stories from Hope Station — a tranquil garden venue at the foot of the Outeniqua mountains in George, Western Cape.">
+  <link rel="canonical" href="https://claireboshoff.github.io/hopestation-v2/blog.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Blog — Hope Station">
+  <meta property="og:description" content="Insights, tips and stories from Hope Station garden venue in George, Western Cape.">
+  <meta property="og:image" content="images/og-image.png">
+  <meta property="og:url" content="https://claireboshoff.github.io/hopestation-v2/blog.html">
+  <meta property="og:type" content="website">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            green: { 900: '#1a2e22', 800: '#243a2c', 700: '#305040', 600: '#3d6550', 500: '#5B8050', 400: '#6d9a68', 300: '#90B090', 200: '#A0C090', 100: '#D0E0D0', 50: '#F0F5F0' },
+            sage: { DEFAULT: '#90B090', light: '#A0C090', pale: '#D0E0D0' },
+            earth: { DEFAULT: '#706060', light: '#8a7a7a' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --color-primary: #1a2e22;
+      --color-secondary: #305040;
+      --color-accent: #5B8050;
+      --color-sage: #90B090;
+      --color-surface: #F0F5F0;
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    body { background-color: var(--color-surface); }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transition: transform 400ms var(--ease-out), box-shadow 400ms var(--ease-out);
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(48, 80, 64, 0.12);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--color-accent), var(--color-sage));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out); }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body class="font-sans antialiased text-green-900">
+
+  <!-- Navigation -->
+  <nav class="bg-green-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="index.html" class="flex items-center" aria-label="Hope Station home">
+          <img src="images/logo.png" alt="Hope Station" class="h-12 lg:h-14 w-auto drop-shadow-md">
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html#about" class="text-sm text-white/80 hover:text-white transition-colors">About</a>
+          <a href="index.html#spaces" class="text-sm text-white/80 hover:text-white transition-colors">Spaces</a>
+          <a href="index.html#gallery" class="text-sm text-white/80 hover:text-white transition-colors">Gallery</a>
+          <a href="blog.html" class="text-sm text-white font-semibold">Blog</a>
+          <a href="index.html#faq" class="text-sm text-white/80 hover:text-white transition-colors">FAQ</a>
+          <a href="index.html#contact" class="bg-sage text-green-900 px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-sage-light transition-colors">
+            Book Now
+          </a>
+        </div>
+        <a href="index.html" class="md:hidden text-sm text-white/80 hover:text-white">&larr; Back</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Blog Header -->
+    <section class="py-16 lg:py-24 bg-white/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-sm font-semibold text-green-600 uppercase tracking-wider mb-4">Our Blog</p>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold">
+          Stories & <span class="gradient-text">Inspiration</span>
+        </h1>
+        <p class="mt-4 text-green-700/70 text-lg max-w-2xl mx-auto">
+          Insights on hosting memorable events, venue planning tips, and stories from Hope Station.
+        </p>
+      </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="py-16 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Post 1 -->
+          <article class="glass-card rounded-2xl overflow-hidden reveal">
+            <div class="h-52 overflow-hidden">
+              <picture>
+                <source srcset="images/hero-meadow-mountains.webp" type="image/webp">
+                <img src="images/hero-meadow-mountains.jpg" alt="Outeniqua mountains from Hope Station" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+              </picture>
+            </div>
+            <div class="p-7">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">Venue</span>
+                <span class="text-xs text-green-600/60">March 2026</span>
+              </div>
+              <h2 class="font-display text-xl font-bold text-green-800 mb-2 leading-snug">Why Nature-Based Venues Are the Future of Corporate Retreats</h2>
+              <p class="text-green-700/70 text-sm leading-relaxed mb-4">Research shows that time in nature improves focus, creativity, and team cohesion. Here's why garden venues are replacing hotel conference rooms for meaningful offsites.</p>
+              <span class="text-green-600 font-semibold text-sm">Read more &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="glass-card rounded-2xl overflow-hidden reveal">
+            <div class="h-52 overflow-hidden">
+              <picture>
+                <source srcset="images/garden-stone-pathway.webp" type="image/webp">
+                <img src="images/garden-stone-pathway.jpg" alt="Garden pathway at Hope Station" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+              </picture>
+            </div>
+            <div class="p-7">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">Planning</span>
+                <span class="text-xs text-green-600/60">March 2026</span>
+              </div>
+              <h2 class="font-display text-xl font-bold text-green-800 mb-2 leading-snug">5 Things to Consider When Choosing a Workshop Venue</h2>
+              <p class="text-green-700/70 text-sm leading-relaxed mb-4">From natural lighting to breakout spaces, the right venue can make or break your workshop. We share the checklist we recommend to every facilitator who contacts us.</p>
+              <span class="text-green-600 font-semibold text-sm">Read more &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="glass-card rounded-2xl overflow-hidden reveal">
+            <div class="h-52 overflow-hidden">
+              <picture>
+                <source srcset="images/garden-picnic-area.webp" type="image/webp">
+                <img src="images/garden-picnic-area.jpg" alt="Garden picnic area at Hope Station" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+              </picture>
+            </div>
+            <div class="p-7">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">Wellness</span>
+                <span class="text-xs text-green-600/60">February 2026</span>
+              </div>
+              <h2 class="font-display text-xl font-bold text-green-800 mb-2 leading-snug">How to Plan a Wellness Retreat That Actually Transforms</h2>
+              <p class="text-green-700/70 text-sm leading-relaxed mb-4">The best wellness retreats go beyond yoga mats and smoothies. They need the right environment, flow, and energy. Here's what we've learned from hosting them.</p>
+              <span class="text-green-600 font-semibold text-sm">Read more &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Post 4 -->
+          <article class="glass-card rounded-2xl overflow-hidden reveal">
+            <div class="h-52 overflow-hidden">
+              <picture>
+                <source srcset="images/gate-mountain-view.webp" type="image/webp">
+                <img src="images/gate-mountain-view.jpg" alt="Mountain views from Hope Station entrance" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+              </picture>
+            </div>
+            <div class="p-7">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">George</span>
+                <span class="text-xs text-green-600/60">February 2026</span>
+              </div>
+              <h2 class="font-display text-xl font-bold text-green-800 mb-2 leading-snug">George: Why the Garden Route's Hidden Gem is Perfect for Events</h2>
+              <p class="text-green-700/70 text-sm leading-relaxed mb-4">George offers everything Cape Town does — mountains, cuisine, culture — without the traffic, crowds, and inflated pricing. Here's why event planners are taking notice.</p>
+              <span class="text-green-600 font-semibold text-sm">Read more &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Post 5 -->
+          <article class="glass-card rounded-2xl overflow-hidden reveal">
+            <div class="h-52 overflow-hidden">
+              <picture>
+                <source srcset="images/two-women-outdoors.webp" type="image/webp">
+                <img src="images/two-women-outdoors.jpg" alt="Guests enjoying Hope Station gardens" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+              </picture>
+            </div>
+            <div class="p-7">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">Tips</span>
+                <span class="text-xs text-green-600/60">January 2026</span>
+              </div>
+              <h2 class="font-display text-xl font-bold text-green-800 mb-2 leading-snug">The Secret to a Productive Team Day: Get Out of the Office</h2>
+              <p class="text-green-700/70 text-sm leading-relaxed mb-4">Studies show that changing your physical environment boosts creative thinking by up to 60%. We explore why off-site days deliver results that boardrooms can't.</p>
+              <span class="text-green-600 font-semibold text-sm">Read more &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Post 6 -->
+          <article class="glass-card rounded-2xl overflow-hidden reveal">
+            <div class="h-52 overflow-hidden">
+              <picture>
+                <source srcset="images/snow-capped-mountains.webp" type="image/webp">
+                <img src="images/snow-capped-mountains.jpg" alt="Snow-capped Outeniqua peaks near George" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+              </picture>
+            </div>
+            <div class="p-7">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">Seasonal</span>
+                <span class="text-xs text-green-600/60">January 2026</span>
+              </div>
+              <h2 class="font-display text-xl font-bold text-green-800 mb-2 leading-snug">Winter Events at Hope Station: Crisp Air, Clear Minds</h2>
+              <p class="text-green-700/70 text-sm leading-relaxed mb-4">George winters bring snow-capped mountains, crisp mornings, and cosy indoor spaces. Discover why the cooler months are actually our most popular season for retreats.</p>
+              <span class="text-green-600 font-semibold text-sm">Read more &rarr;</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="py-16 lg:py-24 bg-green-900 text-white text-center">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold">Stay Inspired</h2>
+        <p class="mt-4 text-white/70 text-lg">Get venue tips, event ideas, and seasonal updates delivered to your inbox.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input type="email" placeholder="your@email.com" class="flex-1 px-5 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-sage transition-colors">
+          <button class="bg-sage text-green-900 px-6 py-3 rounded-xl font-semibold hover:bg-sage-light transition-colors whitespace-nowrap">Subscribe</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-900 text-white/70 py-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-sm">&copy; 2026 Hope Station. All rights reserved.</div>
+        <div class="flex items-center gap-6 text-sm">
+          <a href="index.html" class="hover:text-sage transition-colors">Home</a>
+          <a href="index.html#contact" class="hover:text-sage transition-colors">Contact</a>
+          <a href="index.html#faq" class="hover:text-sage transition-colors">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll reveal -->
+  <script>
+    (function() {
+      const els = document.querySelectorAll('.reveal');
+      if (els.length && 'IntersectionObserver' in window) {
+        const obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) { e.target.classList.add('revealed'); obs.unobserve(e.target); }
+          });
+        }, { threshold: 0.12 });
+        els.forEach(function(el) { obs.observe(el); });
+      } else {
+        els.forEach(function(el) { el.classList.add('revealed'); });
+      }
+    })();
+  </script>
+</body>
+</html>
