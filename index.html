@@ -43,7 +43,7 @@
             display: ['Playfair Display', 'Georgia', 'serif'],
           },
           colors: {
-            green: { 900: '#1a2e22', 800: '#243a2c', 700: '#305040', 600: '#3d6550', 500: '#5B8050', 400: '#6d9a68', 300: '#90B090', 200: '#A0C090', 100: '#D0E0D0', 50: '#F0F5F0' },
+            green: { 900: '#2a3e30', 800: '#35513e', 700: '#4a7060', 600: '#5a8a72', 500: '#6ea066', 400: '#88b882', 300: '#a8c8a0', 200: '#c0d8b8', 100: '#deecd8', 50: '#f2f7ef' },
             sage: { DEFAULT: '#90B090', light: '#A0C090', pale: '#D0E0D0' },
             earth: { DEFAULT: '#706060', light: '#8a7a7a' },
           }
@@ -55,19 +55,19 @@
   <!-- Design System -->
   <style>
     :root {
-      --color-primary: #1a2e22;
-      --color-secondary: #305040;
-      --color-accent: #5B8050;
-      --color-sage: #90B090;
-      --color-sage-light: #A0C090;
+      --color-primary: #2a3e30;
+      --color-secondary: #4a7060;
+      --color-accent: #6ea066;
+      --color-sage: #a8c8a0;
+      --color-sage-light: #c0d8b8;
       --color-earth: #706060;
       --color-surface: #F0F5F0;
-      --color-text: #1a2e22;
+      --color-text: #2a3e30;
       --color-text-muted: #5a6a5a;
       --glass-bg: rgba(48, 80, 64, 0.06);
       --glass-border: rgba(48, 80, 64, 0.12);
       --glass-blur: 20px;
-      --glass-bg-dark: rgba(26, 46, 34, 0.85);
+      --glass-bg-dark: rgba(42, 62, 48, 0.80);
       --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -256,32 +256,30 @@
   <main id="main">
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center overflow-hidden" id="hero">
-      <div class="absolute inset-0">
-        <picture>
-          <source srcset="images/hero-meadow-mountains.webp" type="image/webp">
-          <img src="images/hero-meadow-mountains.jpg" alt="Lush green meadow with Outeniqua mountains" class="w-full h-full object-cover hero-zoom" id="hero-img" loading="eager">
-        </picture>
-      </div>
-      <div class="absolute inset-0 bg-gradient-to-b from-green-900/70 via-green-900/40 to-green-900/60"></div>
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div class="max-w-3xl">
-          <p class="text-sm font-semibold text-sage uppercase tracking-[0.2em] mb-6 reveal">Garden Venue &middot; George, Western Cape</p>
-          <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight text-white reveal">
-            Where Nature Meets
-            <span class="embossed"> Purpose</span>
-          </h1>
-          <p class="mt-6 text-lg sm:text-xl text-white/80 max-w-xl leading-relaxed reveal">
-            Nestled at the foot of the Outeniqua mountains, Hope Station is a tranquil garden venue for corporate retreats, wellness events, and meaningful gatherings.
-          </p>
-          <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal">
-            <a href="#contact" class="btn-glow bg-sage text-green-900 px-8 py-4 rounded-xl text-lg font-semibold text-center">
-              Enquire Now
-            </a>
-            <a href="#spaces" class="glass px-8 py-4 rounded-xl text-lg font-medium text-center text-white hover:bg-white/10 transition-colors">
-              Explore Spaces
-            </a>
-          </div>
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="hero" style="background: linear-gradient(160deg, #2a3e30 0%, #3d5c46 40%, #4a7060 75%, #5a8a72 100%);">
+      <!-- Subtle leaf/texture overlay -->
+      <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 80%, rgba(168,200,160,0.4) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(168,200,160,0.3) 0%, transparent 50%);"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+        <!-- Logo prominent in hero -->
+        <div class="mb-8 reveal">
+          <img src="images/logo.png" alt="Hope Station" class="h-28 sm:h-36 w-auto mx-auto drop-shadow-2xl" style="filter: drop-shadow(0 4px 24px rgba(0,0,0,0.3));">
+          <p class="mt-4 text-sage text-lg font-semibold tracking-[0.25em] uppercase opacity-90">Hope Station</p>
+        </div>
+        <p class="text-sm font-semibold text-sage/80 uppercase tracking-[0.2em] mb-6 reveal">Garden Venue &middot; George, Western Cape</p>
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight text-white reveal">
+          Where Nature Meets
+          <span class="embossed"> Purpose</span>
+        </h1>
+        <p class="mt-6 text-lg sm:text-xl text-white/75 max-w-xl mx-auto leading-relaxed reveal">
+          Nestled at the foot of the Outeniqua mountains, Hope Station is a tranquil garden venue for corporate retreats, wellness events, and meaningful gatherings.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center reveal">
+          <a href="#contact" class="btn-glow bg-sage text-green-900 px-8 py-4 rounded-xl text-lg font-semibold text-center">
+            Enquire Now
+          </a>
+          <a href="#spaces" class="glass px-8 py-4 rounded-xl text-lg font-medium text-center text-white hover:bg-white/10 transition-colors">
+            Explore Spaces
+          </a>
         </div>
       </div>
     </section>
@@ -355,8 +353,8 @@
 
           <div class="glass-card rounded-2xl overflow-hidden reveal">
             <div class="h-56 overflow-hidden">
-              <picture><source srcset="images/cabin-exterior-garden.webp" type="image/webp">
-              <img src="images/cabin-exterior-garden.jpg" alt="Wooden venue building with gardens" class="w-full h-full object-cover" loading="lazy" width="1599" height="899"></picture>
+              <picture><source srcset="images/garden-birdbath-fountain.webp" type="image/webp">
+              <img src="images/garden-birdbath-fountain.jpg" alt="Beautiful garden at Hope Station" class="w-full h-full object-cover" loading="lazy" width="1599" height="899"></picture>
             </div>
             <div class="p-7">
               <h3 class="font-display text-xl font-bold text-green-800 mb-2">Corporate Retreats</h3>
@@ -496,7 +494,7 @@
             <picture><source srcset="images/garden-stone-pathway.webp" type="image/webp"><img src="images/garden-stone-pathway.jpg" alt="Stone pathway through gardens" class="w-full h-full object-cover" loading="lazy"></picture>
           </div>
           <div class="gallery-item rounded-xl overflow-hidden reveal">
-            <picture><source srcset="images/cabin-exterior-garden.webp" type="image/webp"><img src="images/cabin-exterior-garden.jpg" alt="Venue building with gardens" class="w-full h-full object-cover" loading="lazy"></picture>
+            <picture><source srcset="images/garden-birdbath-fountain.webp" type="image/webp"><img src="images/garden-birdbath-fountain.jpg" alt="Beautiful garden at Hope Station" class="w-full h-full object-cover" loading="lazy"></picture>
           </div>
           <div class="gallery-item rounded-xl overflow-hidden reveal">
             <picture><source srcset="images/garden-picnic-area.webp" type="image/webp"><img src="images/garden-picnic-area.jpg" alt="Garden picnic area" class="w-full h-full object-cover" loading="lazy"></picture>
